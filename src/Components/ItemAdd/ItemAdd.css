@@ -1,0 +1,62 @@
+.register-div {
+  background-color: #53565a;
+  color: white;
+  display: grid;
+  grid-template: 25% 35% / 20% 60% 20%;
+  height: 100vh;
+  text-align: center;
+}
+
+.register-header {
+  grid-column-start: 2;
+  font-size: 2em;
+}
+
+.register-div form {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  grid-column-start: 2;
+  grid-row-start: 2;
+}
+
+.name-input,
+.email-input,
+.password-input,
+.register-button {
+  animation: 1s slidein;
+}
+
+.register-div input {
+  border-radius: 3px;
+  border: none;
+  font-size: 1.3em;
+  height: 30px;
+  padding-left: 10px;
+}
+
+@keyframes slidein {
+  from {
+    margin-bottom: -2000px;
+  }
+  to {
+    margin-bottom: 0;
+  }
+}
+
+.register-button {
+  background-color: #3c6e71;
+  color: white;
+}
+
+.register-button:disabled {
+  background-color: gray;
+  color: white;
+}
+.register-button:disabled:hover {
+  cursor: default;
+}
+.register-button:hover {
+  background-color: #ff4743;
+  cursor: pointer;
+}

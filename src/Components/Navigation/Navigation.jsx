@@ -1,14 +1,14 @@
 import React from 'react';
 import { Route, NavLink, Switch } from "react-router-dom";
-import Home from './Home';
-import ItemAdd from './ItemAdd';
-import List from './List';
+import Home from '../Home/Home';
+import ItemAdd from '../ItemAdd/ItemAdd';
+import List from '../List/List';
 
 const Navigation = () => {
   return(
     <div className="nav-container">
       <header className="page-header">
-          <NavLink to="/" className="items-link">
+          <NavLink to="/" className="home-link">
             Home
           </NavLink>
           <NavLink to="/items" className="items-link">

@@ -1,0 +1,57 @@
+.page-header {
+  background-color: #3c6e71;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-column-gap: 5px;
+  width: 100%;
+  height: 80px;
+}
+
+.name-logout {
+  display: flex;
+  width: 200px;
+}
+
+.home-link,
+.items-link,
+.add-link {
+  font-family: "Cinzel", serif;
+  background-color: #353535;
+  border: 1px solid #d9d9d9;
+  border-radius: 50px;
+  color: white;
+  height: 30px;
+  width: 100px;
+  margin: 20px 5px;
+  padding-top: 8px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.home-link:hover,
+.items-link:hover,
+.add-link:hover {
+  background-color: #ff4743;
+  color: white;
+  cursor: pointer;
+}
+
+.home-link:focus,
+.items-link:focus,
+.add-link:focus {
+  background-color: #ff4743;
+  color: white;
+  cursor: pointer;
+}
+
+h1 {
+  color: black;
+  text-align: center;
+  overflow: hidden;
+  border-right: 0.15em solid #3c6e71;
+  white-space: nowrap;
+  margin: 15px auto;
+  width: 38%;
+  font-size: 3.5em;
+}
