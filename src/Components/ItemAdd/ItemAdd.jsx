@@ -7,7 +7,22 @@ class ItemAdd extends React.Component{
     this.state = {
       title: '',
       description: '',
+      existingItems: {}
     }
+  }
+
+  componentDidMount() {
+    this.getItemsFromLocal();
+  }
+
+  getItemsFromLocal() {
+    let existingItems;
+    const items = localStorage.getItem('Items');
+    if (items) {
+      existingItems = JSON.parse(items)
+      this.setState({ existingItems })
+    }
+    console.log('EXISTING ITEMS:: ', existingItems)
   }
 
   handleInput(type, input) {
@@ -17,14 +32,17 @@ class ItemAdd extends React.Component{
   }
 
   saveToLocal = () => {
-    console.log('this.state::', this.state);
-    // localStorage.setItem(
-    //   "Item",
-    //   JSON.stringify(this.state)
-    // );
+    const { title, description, existingItems } = this.state;
+    const itemsToStore = Object.assign({}, existingItems, {[title]: description});
+    this.setState({title: '', description: '', existingItems: itemsToStore});
+    localStorage.setItem(
+      "Items",
+      JSON.stringify(itemsToStore)
+    );
   }
 
   render() {
+    const {title, description} = this.state;
     return (
       <div className="register-div">
         <h2 className="register-header">Create a new account</h2>
@@ -37,11 +55,13 @@ class ItemAdd extends React.Component{
           <input
             placeholder="Title"
             className="name-input"
+            value={title}
             onChange={e => this.handleInput("title", e.target.value)}
           />
           <input
             placeholder="Description"
             className="email-input"
+            value={description}
             onChange={e => this.handleInput("description", e.target.value)}
           />
           
